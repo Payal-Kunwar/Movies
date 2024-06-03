@@ -28,7 +28,7 @@ const props = defineProps({
 
     const onClick = (id) => {
         // emit('handleClick', title)
-        router.push({ name:'moviepage', path: `/movies/${id}`, params: { id: id}})
+        router.push({ name:'moviepage', params: { id: id}})
     }
 </script>
 

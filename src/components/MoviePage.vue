@@ -1,5 +1,5 @@
 <template>
-    <v-btn to="/movies">Home</v-btn>
+    <v-btn @click="() => router.push('/')">Home</v-btn>
     <div class="container" v-if="movie?.id">
         <h1 style="text-align: center;">
             {{ movie.original_title }}
@@ -17,9 +17,10 @@
 
 <script setup>
 import { computed, onMounted, ref } from 'vue'
-import { useRoute } from 'vue-router'
+import { useRoute, useRouter } from 'vue-router'
 
 const route = useRoute()
+const router = useRouter()
 const movie = ref()
 
 const imageStyle = computed(() =>{
